@@ -1,6 +1,6 @@
-package main.DataTypes;
+package main.JavaBase.DataDeclare;
 
-public class BasedTypes {
+public class DeclareRules {
 
     public static void main(String[] args) {
         System.out.println(declareParam());
