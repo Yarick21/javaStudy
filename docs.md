@@ -83,7 +83,7 @@ int b = (int)a; // Преобразование значения `a` к типу
 ```
 
 ### Логические конструкции  
-[Подробнее тут](https://metanit.com/java/tutorial/2.5.php)  
+[Подробнее тут](https://metanit.com/java/tutorial/2.5.php) или [тут](https://javarush.com/groups/posts/cikly-java)  
 В языке Java используются следующие условные конструкции: `if..else` и `switch..case`  
 1. Конструкция `if/else`
    ```
@@ -116,3 +116,69 @@ int b = (int)a; // Преобразование значения `a` к типу
         System.out.println("число не равно 1, 8, 9");
     }
    ```
+### Циклы в Java
+
+1. Цикл for
+```
+for ([инициализация счетчика]; [условие]; [изменение счетчика])
+{
+    // действия
+}
+```
+1.1 Цикл for each  
+Этот цикл Java — разновидность цикла for для итерации коллекций и массивов.
+```
+for (Type var : vars) {
+    statement(s)
+}
+```
+Пример
+```
+  String[] daysOfWeek =
+          { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
+
+
+  for (String dayOfWeek : daysOfWeek) {
+      System.out.println(dayOfWeek);
+  }
+```
+2. Цикл do while
+```
+int j = 7;
+do{
+    System.out.println(j);
+    j--;
+}
+while (j > 0);
+```
+3. Цикл while
+```
+int j = 6;
+while (j > 0){
+ 
+    System.out.println(j);
+    j--;
+}
+```
+### Параметры переменной длины
+Если в метод/функцию необходимо передать N-количество параметров одного типа, можно использовать  следующую конструкцию `String method(String ...nums);`  
+Аналогично для примитивных типов данных: `int method(int ...nums);`  
+Пример:
+```
+public class Program{
+      
+    public static void main (String args[]){
+          
+        sum(1, 2, 3);           // 6
+        sum(1, 2, 3, 4, 5);     // 15
+        sum();                  // 0
+    }
+    static void sum(int ...nums){
+         
+        int result =0;
+        for(int n: nums)
+            result += n;
+        System.out.println(result);
+    }
+}
+```
