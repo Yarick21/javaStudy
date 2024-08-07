@@ -1,15 +1,13 @@
-package main.JavaBase.Array;
+package Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class ArrayTrain {
     public static void main(String[] args) {
-        int arr[] = {1, 1, 2, 2, 3};
-        System.out.println(sumNoDuplicates(arr));
+        printNumbers();
     }
 
     public static String test() {
@@ -166,6 +164,13 @@ public class ArrayTrain {
         }
         System.out.println(newList);
         return result;
+    }
+
+    static void printNumbers() {
+        int[] numbers = {1,2,3,4};
+        for(int i = 0; i != numbers.length; i++) {
+            System.out.println("Значение массива = " + numbers[i] );
+        }
     }
 }
 
