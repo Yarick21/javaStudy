@@ -6,9 +6,6 @@ import java.util.HashSet;
 import java.util.List;
 
 public class ArrayTrain {
-    public static void main(String[] args) {
-        printNumbers();
-    }
 
     public static String test() {
         return "test";
@@ -166,7 +163,7 @@ public class ArrayTrain {
         return result;
     }
 
-    static void printNumbers() {
+    public static void printNumbers() {
         int[] numbers = {1,2,3,4};
         for(int i = 0; i != numbers.length; i++) {
             System.out.println("Значение массива = " + numbers[i] );
