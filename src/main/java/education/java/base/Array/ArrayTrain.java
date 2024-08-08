@@ -1,4 +1,4 @@
-package Array;
+package education.java.base.Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
