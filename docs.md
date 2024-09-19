@@ -122,7 +122,7 @@ int b = (int)a; // Преобразование значения `a` к типу
 1. Конструкция `if/else`
    ```
    int a = <значение>;
-   int b = <значеник>;
+   int b = <значение >;
    if (a < b) {
        System.out.println("a меньше b");
    } else if (a = b) {
@@ -131,25 +131,32 @@ int b = (int)a; // Преобразование значения `a` к типу
        System.out.println("a больше b");
    }
    ```
-2. Конструкция `switch/case`
-    ```
-   int num = 8;
-    switch(num) {
-    case 1: 
-        System.out.println("число равно 1");
-        break;
-    case 8: 
-        System.out.println("число равно 8");
-        num++;
-        break;
-    case 9: 
-    case 10: 
-        System.out.println("число больше 9");
-        break;
-    default:
-        System.out.println("число не равно 1, 8, 9");
-    }
-   ```
+   2. Конструкция `switch/case`
+       ```
+      int num = 8;
+       switch(num) {
+       case 1: 
+          {
+              System.out.println("число равно 1");
+              System.out.println("число равно ...");
+          }        
+           break;
+       case 8: 
+           System.out.println("число равно 8");
+           num++;
+           break;
+       case 9: 
+       case 10: 
+           System.out.println("число больше 9");
+           break;
+       default:
+           System.out.println("число не равно 1, 8, 9");
+       }
+      ```
+* Оператор `break` необходим, чтобы не проваливаться дальше по цепочке, если мы попали в какой-то из кейсов и не хотим, чтобы выполнились кейсы ниже.  
+То есть, если мы сразу попадём в `case 1` и не поставим `break`, то у нас так же выполнятся кейсы ниже.
+* Оператор `default` необходим, чтобы указать действие по умолчанию, если не попали ни в один из кейсов.
+
 ### Циклы в Java
 
 1. Цикл for
