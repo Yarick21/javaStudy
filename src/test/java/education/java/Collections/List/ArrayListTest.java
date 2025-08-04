@@ -3,6 +3,7 @@ package education.java.Collections.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -11,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ArrayListTest {
 
     private final List<Integer> listInt = List.of(1, 2, 3, 4, 5);
+    private List<String> listString = new ArrayList<>();
 
     @Test
     public void arrayListTest() {

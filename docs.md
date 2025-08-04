@@ -17,10 +17,10 @@ text
 ```
 3. Java Doc
 ```
-/**
-* sample 
-* text
-*/
+***
+    sample 
+    text
+***
 ```
 ### Объявление переменных в Java
 
@@ -118,43 +118,37 @@ int b = (int)a; // Преобразование значения `a` к типу
 
 ### Логические конструкции  
 [Подробнее тут](https://metanit.com/java/tutorial/2.5.php) или [тут](https://javarush.com/groups/posts/cikly-java)  
-В языке Java используются следующие условные конструкции: `if..else` и `switch..case`  
-1. Конструкция `if/else`
-   ```
-   int a = <значение>;
-   int b = <значение >;
-   if (a < b) {
+В языке Java используются следующие условные конструкции: `if..else` и `switch..case`
+#### Конструкция `if() {} else {}`
+```
+    int a = <значение>;
+    int b = <значение >;
+    if (a < b) {
        System.out.println("a меньше b");
-   } else if (a = b) {
+    } else if (a = b) {
        System.out.println("a равно b");
-   } else {
+    } else {
        System.out.println("a больше b");
-   }
-   ```
-   2. Конструкция `switch/case`
-       ```
-      int num = 8;
-       switch(num) {
-       case 1: 
-          {
-              System.out.println("число равно 1");
-              System.out.println("число равно ...");
-          }        
-           break;
-       case 8: 
-           System.out.println("число равно 8");
-           num++;
-           break;
-       case 9: 
-       case 10: 
-           System.out.println("число больше 9");
-           break;
-       default:
-           System.out.println("число не равно 1, 8, 9");
-       }
-      ```
-* Оператор `break` необходим, чтобы не проваливаться дальше по цепочке, если мы попали в какой-то из кейсов и не хотим, чтобы выполнились кейсы ниже.  
-То есть, если мы сразу попадём в `case 1` и не поставим `break`, то у нас так же выполнятся кейсы ниже.
+    }
+```
+#### Конструкция `switch() {case ->}`
+```
+    int result = switch (day) {
+    case MONDAY -> {
+        System.out.println("First day");
+        yield 1;
+    }
+    case TUESDAY -> {
+        System.out.println("Second day");
+        yield 2;
+    }
+    default -> {
+        System.out.println("Other day");
+        yield 0;
+    }
+};
+```
+* yield - ключевое слово, которое используется для возврата значения из блока switch.  
 * Оператор `default` необходим, чтобы указать действие по умолчанию, если не попали ни в один из кейсов.
 
 ### Циклы в Java
@@ -287,6 +281,7 @@ public static void declareParam() {
    ...
 }
 ```
+
 #### multi catch
 В блоке catch() можно обрабатывать не только одно исключение, но и несколько, используя логическое или `||`:
 ```
@@ -313,6 +308,26 @@ public static void declareParam() {
 ```
 public static void declareParam() throws Exception {
    if (<условие>) throw new Exception("<текст>");
+}
+```
+
+### Блок `try() {}`
+Конструкция используется `try() {}` для автоматического закрытия ресурсов, её ещё называют `try-with-resources`.
+```
+public static void initConnection() {
+    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
+    try(connection) {
+        ...
+        // В конце блока try неявно вызовется connection.close() 
+    }
+}
+```
+пример кода без конструкции
+```
+public static void initConnection() {
+    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
+    ...
+    connection.close() // В конце метода необходимо явно закрывать соединение 
 }
 ```
 
@@ -391,3 +406,7 @@ public static void main(String[] args) {
 - `forEach()`
 - `collect()`
 Если объект типа `Stream` не содержит терминального метода, то никакие действия над потоком не будут выполнены.
+
+### Финты с классами
+#### Downcasting
+#### Upcasting
