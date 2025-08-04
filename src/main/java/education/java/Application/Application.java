@@ -1,16 +1,13 @@
 package education.java.Application;
 
-import education.java.base.Array.ArrayTrain;
-import education.java.base.HelloWord.HelloWorld;
+import java.util.function.Consumer;
 
 class Application {
 
     public static void main(String... args) {
-        HelloWorld obj = new HelloWorld();
-
-        System.out.println(ArrayTrain.test()); // Вызов static метода, без экземпляра класса
-        System.out.println(obj.returnHelloWord());// Вызов метода через экземпляр класса
-
-
+        //region main
+        Consumer<String> out = str -> System.out.println(str); // Реализация функционального интерфейса Consumer<T>
+        out.accept("Hello World");
+        //endregion
     }
 }
