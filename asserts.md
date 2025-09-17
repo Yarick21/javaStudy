@@ -2,6 +2,7 @@
 1. junit.Assertions [Документация](https://docs.junit.org/current/user-guide/#overview)
 2. assertj
 3. Mockito
+4. Hamcrest
 
 ### Fixtures
 В тестах удобно выделять логические блоки внутри функции через фикстуру. 
